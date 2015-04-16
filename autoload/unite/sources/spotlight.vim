@@ -12,7 +12,7 @@ function! s:unite_source.gather_candidates(args, context)
   return map(
         \ split(
         \   unite#util#system(printf(
-        \     'mdfind %s | head -n %d',
+        \     'mdfind -onlyin ~/ -name %s | head -n %d',
         \     a:context.input,
         \     s:unite_source.max_candidates)),
         \   "\n"),
